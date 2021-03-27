@@ -1,0 +1,123 @@
+.Header
+    background-color: $header-footer-color
+    position: absolute
+    top: 0
+    width: 100%
+    height: 10rem
+    z-index: 100
+    transition: height .3s
+    @include size(md)
+       padding: 1rem 0
+    &__holder
+        display: flex
+        justify-content: space-between
+        align-items: center
+        flex-direction: column
+        @include size(md)
+            height: 100%
+            flex-direction: row
+    &__brand-name
+        font-size: 3.5rem
+        font-family: 'Akronim'
+        color: #73e550
+        text-shadow: 0 0 9px
+        text-decoration: none
+        margin-right: auto
+        padding: 2.55rem 0 2.55rem 0
+        transition: text-shadow .3s
+        @include size(md)
+            font-size: 5.5rem
+            padding: 0
+        &:hover
+            text-shadow: 0 0 15px
+    &__hambMenu
+        position: absolute
+        top: 3.2rem
+        right: 1.6rem
+        width: 60px
+        height: 40px
+        border: 1px solid #fff
+        border-radius: 4px
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: space-around
+        padding: 0.5rem 0
+        @include size(md)
+            display: none
+        &__item
+            width: 40px
+            height: 3px
+            background-color: #fff
+            border-radius: 3px
+    &__navbar-show
+        height: 23rem
+
+.Navbar
+    visibility: hidden
+    opacity: 0
+    height: 0
+    @include size(md)
+        visibility: visible
+        opacity: 1
+        height: auto
+    &__show
+        visibility: visible
+        opacity: 1
+        height: auto
+        transition: 1s
+    &__list
+        @include size(md)
+            display: flex
+            
+        &-item
+            padding: .5rem 0
+            &:nth-child(4)
+                @include size(md)
+                    margin-left: 1rem
+            @include size(md)
+                padding: .5rem 1rem
+                
+    &__link
+        display: block
+        width: 100%
+        text-decoration: none
+        text-transform: uppercase
+        color: #fff
+        transition: color .3s
+        font-weight: bold
+        letter-spacing: 1px
+        text-align: center
+        &:hover
+            color: $hover-link-color
+        &:active
+            background-color: transparent
+    &__dropdown
+        position: relative
+        &__list
+            position: absolute
+            top: 22px
+            right: -21px
+            background-color: #4b545c
+            padding: 5px 28px
+            border-radius: 4px
+            opacity: 0
+            transition: all .3s
+        &__list-show
+            top: 35px
+            opacity: 1
+        &__marker-1
+            position: absolute
+            top: 9px
+            right: -15px
+            width: 0
+            height: 0
+            border-style: solid
+            border-width: 5px 0 5px 10px
+            border-color: transparent transparent transparent $hover-link-color
+            @include size(md)
+                right: -3px
+        &__marker-2
+            @extend .Navbar__dropdown__marker-1
+            border-width: 10px 5px 0 5px
+            border-color: $hover-link-color transparent transparent transparent
