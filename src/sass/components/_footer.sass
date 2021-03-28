@@ -1,0 +1,46 @@
+.Footer
+    background-color: $header-footer-color
+    padding: 5rem 0
+    &__links-holder
+        width: max-content
+        margin: 0 auto
+        .Navbar__link
+            text-align: left
+    &__contacts-holder
+        @extend .Footer__links-holder
+        .Navbar-item
+            color: #fff
+            margin-bottom: 2rem
+            margin-left: 6rem
+            position: relative
+            &:nth-child(1)
+                &:before
+                    @include contact-icon
+                    background-image: url('./icons/cell-phone.png')
+            &:nth-child(2)
+                &:before
+                    @include contact-icon
+                    left: -35px
+                    background-image: url('./icons/landline-phone.png') 
+            &:nth-child(3)
+                &:before
+                    @include contact-icon
+                    background-size: contain
+                    left: -33px
+                    background-image: url('./icons/email-icon.png') 
+            &:nth-child(4)
+                text-decoration: none
+                &:hover
+                    text-decoration: underline
+                    &:before
+                        filter: invert(45%) sepia(0%) saturate(7409%) hue-rotate(16deg) brightness(118%) contrast(150%)
+                &:before
+                    @include contact-icon
+                    background-size: contain
+                    left: -33px
+                    background-image: url('./icons/fb-icon.png') 
+                    filter: invert(55%) sepia(0%) saturate(1%) hue-rotate(-72deg) brightness(161%) contrast(103%)
+                    
+    .second-title
+        color: #fff
+        letter-spacing: 3px

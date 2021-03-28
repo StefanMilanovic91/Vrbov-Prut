@@ -31,7 +31,7 @@ ul {
   font-size: 3.5rem;
   color: #6c757d;
   text-align: center;
-  padding-top: 6rem;
+  padding-top: 8rem;
   letter-spacing: 2px;
 }
 
@@ -48,11 +48,29 @@ ul {
   height: 2px;
   background-color: #6c757d;
   border-radius: 3px;
-  margin: 35px auto 35px;
+  margin: 35px auto 10rem;
 }
 
 .mt-3 {
   margin-top: 3rem;
+}
+
+.mb-3 {
+  margin-bottom: 3rem;
+}
+
+.mb-7 {
+  margin-bottom: 7rem;
+}
+
+@media screen and (min-width: 768px) {
+  .mb-md-0 {
+    margin-bottom: 0;
+  }
+}
+
+.text-center {
+  text-align: center;
 }
 
 .Header {
@@ -232,6 +250,10 @@ ul {
   background-color: transparent;
 }
 
+.Navbar__link__active {
+  color: #73e550;
+}
+
 .Navbar__dropdown {
   position: relative;
 }
@@ -276,36 +298,154 @@ ul {
   border-color: #73e550 transparent transparent transparent;
 }
 
+.Navbar__dropdown > a {
+  cursor: pointer;
+}
+
+.Footer {
+  background-color: #343a40;
+  padding: 5rem 0;
+}
+
+.Footer__links-holder, .Footer__contacts-holder {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin: 0 auto;
+}
+
+.Footer__links-holder .Navbar__link, .Footer__contacts-holder .Navbar__link {
+  text-align: left;
+}
+
+.Footer__contacts-holder .Navbar-item {
+  color: #fff;
+  margin-bottom: 2rem;
+  margin-left: 6rem;
+  position: relative;
+}
+
+.Footer__contacts-holder .Navbar-item:nth-child(1):before {
+  content: '';
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: -5px;
+  left: -30px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-filter: invert(100%) sepia(0%) saturate(7486%) hue-rotate(16deg) brightness(106%) contrast(103%);
+          filter: invert(100%) sepia(0%) saturate(7486%) hue-rotate(16deg) brightness(106%) contrast(103%);
+  background-image: url("./icons/cell-phone.png");
+}
+
+.Footer__contacts-holder .Navbar-item:nth-child(2):before {
+  content: '';
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: -5px;
+  left: -30px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-filter: invert(100%) sepia(0%) saturate(7486%) hue-rotate(16deg) brightness(106%) contrast(103%);
+          filter: invert(100%) sepia(0%) saturate(7486%) hue-rotate(16deg) brightness(106%) contrast(103%);
+  left: -35px;
+  background-image: url("./icons/landline-phone.png");
+}
+
+.Footer__contacts-holder .Navbar-item:nth-child(3):before {
+  content: '';
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: -5px;
+  left: -30px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-filter: invert(100%) sepia(0%) saturate(7486%) hue-rotate(16deg) brightness(106%) contrast(103%);
+          filter: invert(100%) sepia(0%) saturate(7486%) hue-rotate(16deg) brightness(106%) contrast(103%);
+  background-size: contain;
+  left: -33px;
+  background-image: url("./icons/email-icon.png");
+}
+
+.Footer__contacts-holder .Navbar-item:nth-child(4) {
+  text-decoration: none;
+}
+
+.Footer__contacts-holder .Navbar-item:nth-child(4):hover {
+  text-decoration: underline;
+}
+
+.Footer__contacts-holder .Navbar-item:nth-child(4):hover:before {
+  -webkit-filter: invert(45%) sepia(0%) saturate(7409%) hue-rotate(16deg) brightness(118%) contrast(150%);
+          filter: invert(45%) sepia(0%) saturate(7409%) hue-rotate(16deg) brightness(118%) contrast(150%);
+}
+
+.Footer__contacts-holder .Navbar-item:nth-child(4):before {
+  content: '';
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: -5px;
+  left: -30px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-filter: invert(100%) sepia(0%) saturate(7486%) hue-rotate(16deg) brightness(106%) contrast(103%);
+          filter: invert(100%) sepia(0%) saturate(7486%) hue-rotate(16deg) brightness(106%) contrast(103%);
+  background-size: contain;
+  left: -33px;
+  background-image: url("./icons/fb-icon.png");
+  -webkit-filter: invert(55%) sepia(0%) saturate(1%) hue-rotate(-72deg) brightness(161%) contrast(103%);
+          filter: invert(55%) sepia(0%) saturate(1%) hue-rotate(-72deg) brightness(161%) contrast(103%);
+}
+
+.Footer .second-title {
+  color: #fff;
+  letter-spacing: 3px;
+}
+
+.Carousel {
+  width: 100%;
+  overflow: hidden;
+}
+
+.Carousel__item {
+  display: inline-block;
+  width: 100%;
+  margin-left: -200%;
+}
+
+.Carousel__item__img {
+  width: 100%;
+}
+
+.Carousel__item__active {
+  display: block;
+  margin-left: 100%;
+}
+
 .Home__section__1 {
-  background-color: #6c757d;
   padding-bottom: 4rem;
 }
 
-.Home__section__1 .Main-title {
-  color: #fff;
-  -webkit-animation: move-title 2.5s ease-in-out infinite;
-          animation: move-title 2.5s ease-in-out infinite;
-}
-
 .Home__section__1__paregraph {
-  color: #fff;
+  color: #313539;
   padding: 2rem 0;
   font-size: 1.6rem;
+  cursor: default;
 }
 
 .Home__section__1__card {
   width: 100%;
   padding: .75rem .75rem .35rem .75rem;
-  border: 1px solid #ccc;
+  border: 1px solid #6c757d;
   border-radius: 3px;
 }
 
 .Home__section__1__card img {
   width: 100%;
-}
-
-.Home__section__1 .underline {
-  background-color: #fff;
 }
 
 .Home__section__2__process {
@@ -351,6 +491,10 @@ ul {
   }
 }
 
+.Home__section__2 .col-12:last-child .Home__section__2__process {
+  border-bottom: none;
+}
+
 @media screen and (min-width: 768px) {
   .Home__section__2 .col-12:nth-child(even) .Home__section__2__process__text-img-holder {
     -webkit-box-orient: horizontal;
@@ -361,9 +505,6 @@ ul {
   .Home__section__2 .col-12:nth-child(even) .Home__section__2__process__image {
     margin-left: 0;
     margin-right: 10rem;
-  }
-  .Home__section__2 .col-12:last-child .Home__section__2__process {
-    border-bottom: none;
   }
 }
 

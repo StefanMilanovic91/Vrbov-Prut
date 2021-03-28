@@ -92,6 +92,9 @@
             color: $hover-link-color
         &:active
             background-color: transparent
+
+        &__active
+            color: $hover-link-color
     &__dropdown
         position: relative
         &__list
@@ -121,3 +124,5 @@
             @extend .Navbar__dropdown__marker-1
             border-width: 10px 5px 0 5px
             border-color: $hover-link-color transparent transparent transparent
+        > a
+            cursor: pointer
