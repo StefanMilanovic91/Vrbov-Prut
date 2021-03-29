@@ -411,19 +411,28 @@ ul {
   overflow: hidden;
 }
 
+.Carousel__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.Carousel__inner__animation {
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  -o-transition: transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+}
+
+.Carousel__inner__stopAnimation {
+  -webkit-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+
 .Carousel__item {
-  display: inline-block;
   width: 100%;
-  margin-left: -200%;
-}
-
-.Carousel__item__img {
-  width: 100%;
-}
-
-.Carousel__item__active {
-  display: block;
-  margin-left: 100%;
 }
 
 .Home__section__1 {

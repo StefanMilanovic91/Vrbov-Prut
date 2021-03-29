@@ -10,7 +10,7 @@ const AboutUs = () => {
     return (
         <main className="Page AboutUs">
             <div className="container">
-                <Carousel crsItems={images} />
+                <Carousel carouselItems={images} />
             </div>
         </main>
     )
