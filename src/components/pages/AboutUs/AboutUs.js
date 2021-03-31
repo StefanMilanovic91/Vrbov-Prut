@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import Carousel from '../../UI/Carousel/Carousel';
 
 const AboutUs = () => {
 
-    const [images, setImages] = useState([{src: "images/slide-1.jpg"}, {src: "images/slide-2.jpg"},{src: "images/slide-3.jpg"},{src: "images/slide-4.jpg"}])
+    const images = [ {src: "images/slide-4.jpg"},{src: "images/slide-3.jpg"},{src: "images/slide-2.jpg"},{src: "images/slide-1.jpg"}]
 
 
     return (

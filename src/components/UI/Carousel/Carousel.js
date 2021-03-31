@@ -15,61 +15,70 @@ const Carousel = ({ carouselItems }) => {
     let classes = ['Carousel__inner', 'Carousel__inner__animation'].join(' ');
 
     useEffect(() => {
+        
+        let time = currentIndex === 1 ? 2298 : 3000
 
-        if (carouselItems.length + 1 === currentIndex) {
+        if (carouselItems.length === currentIndex - 1) {
             
-            let id = setTimeout(() => {
+            let id1 = setTimeout(() => {
                 refArray.current.classList.remove('Carousel__inner__animation');
                 setCurrentIndex(1);
-                
-            }, 1000);
-            return () => clearTimeout(id);
-        } else {
-            
-            let id = setTimeout(() => {
-                refArray.current.classList.add('Carousel__inner__animation');
-                setCurrentIndex(currentIndex + 1)
-            }, 3000);
-            return () => clearTimeout(id);
+            }, 702);
+            return () => clearTimeout(id1);
         }
-
         
+            let id2 = setTimeout(() => {
+                if (currentIndex === 1) refArray.current.classList.add('Carousel__inner__animation');
+                setCurrentIndex(currentIndex + 1);
+            }, time);
+            
+            return () => clearTimeout(id2);
 
     }, [currentIndex]);
     
-    console.log(currentIndex);
-    //ref={ref => refArray.current[index] = ref}
+    
     return (
         <div className="Carousel" >
             <div ref={refArray} className={classes} style={styles.inner}>
+                
             {
                     carouselItems.map((item, index) => {
                         if (carouselItems.length - 1 === index) {
                             return <Fragment>
-                                        <div  key={index + 11} className="Carousel__item">
+                                        <div key={Math.floor(Math.random() * 10000)} className="Carousel__item">
                                             <img className="Carousel__item__img" src={item.src} alt="test"/>
                                         </div>
-                                        <div  key={index} className="Carousel__item">
+                                        <div key={Math.floor(Math.random() * 10000)} className="Carousel__item">
                                             <img className="Carousel__item__img" src={carouselItems[0].src} alt="test"/>
                                         </div>
                                     </Fragment>
                         } else if (index === 0) {
                             return <Fragment>
-                                        <div  key={index} className="Carousel__item">
+                                        <div  key={Math.floor(Math.random() * 10000)} className="Carousel__item">
                                             <img className="Carousel__item__img" src={carouselItems[carouselItems.length - 1].src} alt="test"/>
                                         </div>
-                                        <div  key={index  + 11} className="Carousel__item">
+                                        <div  key={Math.floor(Math.random() * 10000)} className="Carousel__item">
                                             <img className="Carousel__item__img" src={item.src} alt="test"/>
                                         </div>
                                     </Fragment>
                         } else {
-                            return  <div  key={index} className="Carousel__item">
+                            return  <div  key={Math.floor(Math.random() * 10000)} className="Carousel__item">
                                         <img className="Carousel__item__img" src={item.src} alt="test"/>
                                     </div>
                         }
                         
                     })
             }
+            </div>
+            <div className="Carousel__caption">
+                <div className="Carousel__caption__holder">
+                    <h3 className="Carousel__caption__title">
+                        Pletarska radnja <br/> <span className="logo">Vrbov prut</span>
+                    </h3>
+                    <p className="Carousel__caption__paragraph">
+                        Ako Vam se dopadne neki od naših proizvoda možete poručiti telefonom, e-mail-om ili popunjavanjem kotakt forme, a mi ćemo se postarati da odabrani proizvod kurirskom službom pošaljemo u najkraće mogućem roku.
+                    </p>
+                </div>
             </div>
         </div>
     )

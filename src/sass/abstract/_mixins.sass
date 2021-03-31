@@ -16,6 +16,11 @@
         @media screen and (min-width: 1200px)
             @content 
 
+@mixin max-size($size)
+    @if $size == sm
+        @media screen and (max-width: 576px)
+            @content 
+
 @mixin contact-icon
     content: ''
     width: 25px
