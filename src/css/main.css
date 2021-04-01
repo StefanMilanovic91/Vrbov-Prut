@@ -79,7 +79,7 @@ ul {
   top: 0;
   width: 100%;
   height: 10rem;
-  z-index: 100;
+  z-index: 999;
   -webkit-transition: height .3s;
   -o-transition: height .3s;
   transition: height .3s;
@@ -125,6 +125,7 @@ ul {
   text-decoration: none;
   margin-right: auto;
   padding: 2.55rem 0 2.55rem 0;
+  font-weight: 500;
   -webkit-transition: text-shadow .3s;
   -o-transition: text-shadow .3s;
   transition: text-shadow .3s;
@@ -417,13 +418,13 @@ ul {
 @media screen and (min-width: 576px) {
   .Carousel {
     width: 510px;
+    height: 270px;
   }
 }
 
 @media screen and (min-width: 768px) {
   .Carousel {
     width: 690px;
-    height: 270px;
   }
 }
 
@@ -458,11 +459,11 @@ ul {
 }
 
 .Carousel__inner__animation {
-  -webkit-transition: -webkit-transform .7s;
-  transition: -webkit-transform .7s;
-  -o-transition: transform .7s;
-  transition: transform .7s;
-  transition: transform .7s, -webkit-transform .7s;
+  -webkit-transition: -webkit-transform .7s ease-in-out;
+  transition: -webkit-transform .7s ease-in-out;
+  -o-transition: transform .7s ease-in-out;
+  transition: transform .7s ease-in-out;
+  transition: transform .7s ease-in-out, -webkit-transform .7s ease-in-out;
 }
 
 .Carousel__inner__stopAnimation {
@@ -533,18 +534,85 @@ ul {
   width: 100%;
   height: 100%;
   padding: 1rem 0;
+  color: #fff;
+  z-index: 100;
 }
 
 .Carousel__caption__holder {
   position: inherit;
   top: 50%;
+  left: 0;
   -webkit-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
+  padding: 0 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .Carousel__caption__holder {
+    padding: 0 7rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .Carousel__caption__holder {
+    padding: 0 13rem;
+  }
 }
 
 .Carousel__caption__title {
+  font-family: 'Akronim';
+  letter-spacing: 2px;
+  line-height: 1.2;
   text-align: center;
+  font-weight: 500;
+  font-size: 3rem;
+}
+
+@media screen and (min-width: 576px) {
+  .Carousel__caption__title {
+    padding-bottom: 2rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .Carousel__caption__title {
+    font-size: 4rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .Carousel__caption__title {
+    padding-bottom: 5rem;
+  }
+}
+
+.Carousel__caption__title .Logo {
+  font-size: 3.5rem;
+  font-family: 'Akronim';
+  color: #73e550;
+  text-shadow: 0 0 9px;
+  text-decoration: none;
+  margin-right: auto;
+  padding: 2.55rem 0 2.55rem 0;
+  font-weight: 500;
+}
+
+@media screen and (min-width: 992px) {
+  .Carousel__caption__title .Logo {
+    font-size: 5.5rem;
+  }
+}
+
+.Carousel__caption__paragraph {
+  text-align: justify;
+  font-size: 1.2rem;
+}
+
+@media screen and (min-width: 576px) {
+  .Carousel__caption__paragraph {
+    font-size: 1.4rem;
+  }
 }
 
 .Home__section__1 {
@@ -691,5 +759,62 @@ ul {
   .AboutUs .container {
     max-width: 479px;
   }
+}
+
+.AboutUs .Main-title {
+  padding-top: 3rem;
+}
+
+.AboutUs .underline {
+  margin-bottom: 7rem;
+}
+
+.AboutUs__paragraphs {
+  color: #212529;
+  font-size: 1.6rem;
+}
+
+.AboutUs__paragraph {
+  padding-bottom: 1.5rem;
+  text-align: justify;
+}
+
+.AboutUs__links-holder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding-top: 3rem;
+}
+
+.AboutUs__links-holder .Navbar__link {
+  color: #6c757d;
+}
+
+.AboutUs__links-holder .Navbar__list-item {
+  padding-left: 0;
+}
+
+.Products {
+  padding-top: 5rem;
+}
+
+.Products .second-title {
+  font-weight: 500;
+  text-align: center;
+}
+
+.Products .second-title__span {
+  display: inline-block;
+}
+
+.Products .second-title__span::first-letter {
+  text-transform: uppercase;
 }
 /*# sourceMappingURL=main.css.map */

@@ -4,7 +4,7 @@
     top: 0
     width: 100%
     height: 10rem
-    z-index: 100
+    z-index: 999
     transition: height .3s
     @include size(md)
        padding: 1rem 0
@@ -17,13 +17,7 @@
             height: 100%
             flex-direction: row
     &__brand-name
-        font-size: 3.5rem
-        font-family: 'Akronim'
-        color: #73e550
-        text-shadow: 0 0 9px
-        text-decoration: none
-        margin-right: auto
-        padding: 2.55rem 0 2.55rem 0
+        @include logo
         transition: text-shadow .3s
         @include size(md)
             font-size: 5.5rem

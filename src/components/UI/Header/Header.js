@@ -24,7 +24,7 @@ const Header = () => {
                         <li className="Navbar__list-item">
                             <NavLink activeClassName="Navbar__link__active" onClick={() => setToggleMenu(false)} to="/početna" className="Navbar__link">Početna</NavLink></li>
                         <li className="Navbar__list-item">
-                            <NavLink activeClassName="Navbar__link__active" onClick={() => setToggleMenu(false)} to="/onama" className="Navbar__link">O Nama</NavLink>
+                            <NavLink activeClassName="Navbar__link__active" onClick={() => setToggleMenu(false)} to="/o-nama" className="Navbar__link">O Nama</NavLink>
                         </li>
                         <li className="Navbar__list-item Navbar__dropdown">
                             <a onClick={() => setToggleDDMenu(!toggleDDMenu)} className={toggleDDMenu ? "Navbar__link Navbar__link__active" : "Navbar__link"}>Proizvodi</a>

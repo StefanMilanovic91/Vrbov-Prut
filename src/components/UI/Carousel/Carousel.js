@@ -73,7 +73,7 @@ const Carousel = ({ carouselItems }) => {
             <div className="Carousel__caption">
                 <div className="Carousel__caption__holder">
                     <h3 className="Carousel__caption__title">
-                        Pletarska radnja <br/> <span className="logo">Vrbov prut</span>
+                        Pletarska radnja <br/> <span className="Logo">Vrbov prut</span>
                     </h3>
                     <p className="Carousel__caption__paragraph">
                         Ako Vam se dopadne neki od naših proizvoda možete poručiti telefonom, e-mail-om ili popunjavanjem kotakt forme, a mi ćemo se postarati da odabrani proizvod kurirskom službom pošaljemo u najkraće mogućem roku.
