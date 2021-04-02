@@ -797,6 +797,10 @@ ul {
   color: #6c757d;
 }
 
+.AboutUs__links-holder .Navbar__link:hover {
+  color: #379e17;
+}
+
 .AboutUs__links-holder .Navbar__list-item {
   padding-left: 0;
 }

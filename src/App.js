@@ -1,6 +1,8 @@
 import React, { Fragment } from 'react'
 import { Route, Switch, Redirect } from 'react-router-dom';
 
+import { ProductProvider } from './ContextAPIs/ProductContext';
+
 import Header from './components/UI/Header/Header';
 import Footer from './components/UI/Footer/Footer';
 
@@ -22,6 +24,7 @@ const App = () => {
                 <Route path="/početna" component={Home} />
                 <Route path="/o-nama" component={AboutUs} />
                 <Route path="/proizvodi/:id" component={Products} />
+
 
             </Switch>
             
