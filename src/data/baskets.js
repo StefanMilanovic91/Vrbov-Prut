@@ -1,84 +1,84 @@
 export const baskets = [
     { 
-        src : 'img/k1.jpg',
-        name : 'Bokasta korpa',
+        src : '/images/k1.jpg',
+        title : 'Bokasta korpa',
         length: '55cm',
         width: '25cm',
         height: '35cm',
         price: '1200rsd',
-        sliderThmbs : ['img/k11.png','img/k21.png','img/k31.png']
+        sliderThmbs : ['/images/k11.png','/images/k21.png','/images/k31.png']
     
     },
     { 
-        src : 'img/k2.jpg',
-        name : 'Razvrnuta korpa',
+        src : '/images/k2.jpg',
+        title : 'Razvrnuta korpa',
         length: '55cm',
         width: '20cm',
         height: '35cm',
         price: '1300rsd',
-        sliderThmbs : ['img/k11.png','img/k21.png','img/k31.png']
+        sliderThmbs : ['/images/k11.png','/images/k21.png','/images/k31.png']
     },
     { 
-        src : 'img/k3.jpg',
-        name : 'Četvrtasta korpa',
+        src : '/images/k3.jpg',
+        title : 'Četvrtasta korpa',
         length: '55cm',
         width: '40cm',
         height: '40cm',
         price: '1500rsd',
-        sliderThmbs : ['img/k11.png','img/k21.png','img/k31.png']
+        sliderThmbs : ['/images/k11.png','/images/k21.png','/images/k31.png']
     },
     { 
-        src : 'img/k4.jpg',
-        name : 'Zakrivljena korpa',
+        src : '/images/k4.jpg',
+        title : 'Zakrivljena korpa',
         length: '50cm',
         width: '35cm',
         height: '35cm',
         price: '1200rsd',
-        sliderThmbs : ['img/k11.png','img/k21.png','img/k31.png']
+        sliderThmbs : ['/images/k11.png','/images/k21.png','/images/k31.png']
     },
     { 
-        src : 'img/k5.jpg',
-        name : 'Bokasti ceger',
+        src : '/images/k5.jpg',
+        title : 'Bokasti ceger',
         length: '55cm',
         width: '25cm',
         height: '35cm',
         price: '1200rsd',
-        sliderThmbs : ['img/k11.png','img/k21.png','img/k31.png']
+        sliderThmbs : ['k11.png','k21.png','k31.png']
     },
     { 
-        src : 'img/k6.jpg',
-        name : 'Okrugla korpa',
+        src : '/images/k6.jpg',
+        title : 'Okrugla korpa',
         length: '40cm',
         width: '40cm',
         height: '40cm',
         price: '1300rsd',
-        sliderThmbs : ['img/k11.png','img/k21.png','img/k31.png']
+        sliderThmbs : ['k11.png','k21.png','k31.png']
     },
     { 
-        src : 'img/k7.jpg',
-        name : 'Mali ceger',
+        src : '/images/k7.jpg',
+        title : 'Mali ceger',
         length: '50cm',
         width: '20cm',
         height: '40cm',
         price: '1100rsd',
-        sliderThmbs : ['img/k11.png','img/k21.png','img/k31.png']
+        sliderThmbs : ['k11.png','k21.png','k31.png']
     },
     { 
-        src : 'img/k8.jpg',
-        name : 'Gradska korpa',
+        src : '/images/k8.jpg',
+        title : 'Gradska korpa',
         length: '55cm',
         width: '35cm',
         height: '40cm',
         price: '1300rsd',
-        sliderThmbs : ['img/k11.png','img/k21.png','img/k31.png']
+        sliderThmbs : ['k11.png','k21.png','k31.png']
     },
     { 
-        src : 'img/k9.jpg',
-        name : 'Ka-40 korpa',
+        src : '/images/k9.jpg',
+        title : 'Ka-40 korpa',
         length: '55cm',
         width: '35cm',
         height: '40cm',
         price: '1500rsd',
-        sliderThmbs : ['img/k11.png','img/k21.png','img/k31.png']
+        sliderThmbs : ['k11.png','k21.png','k31.png']
     }
 ]

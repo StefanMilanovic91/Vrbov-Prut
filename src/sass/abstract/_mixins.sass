@@ -20,6 +20,16 @@
     @if $size == sm
         @media screen and (max-width: 576px)
             @content 
+    @if $size == md
+        @media only screen and (max-width: 768px)
+            @content 
+
+@mixin tuchScreen
+    @media only screen and (hover: none)
+        @content 
+@mixin noTuchScreen
+    @media only screen and (hover: hover)
+        @content 
 
 @mixin contact-icon
     content: ''
@@ -31,7 +41,17 @@
     background-repeat: no-repeat
     background-size: cover
     filter: invert(100%) sepia(0%) saturate(7486%) hue-rotate(16deg) brightness(106%) contrast(103%)
-
+@mixin preview-icon
+    content: ''
+    position: absolute
+    top: 0
+    left: 50%
+    transform: translate(-130%, 50%)
+    width: 34px
+    height: 30px
+    background-image: url('./icons/preview-icon.png')
+    background-repeat: no-repeat
+    background-size: 100%
 @mixin logo
     font-size: 3.5rem
     font-family: 'Akronim'
