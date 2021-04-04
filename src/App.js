@@ -17,7 +17,7 @@ import Contact from './components/pages/Contact/Contact';
 const App = () => {
 
     const { showModal } = useContext(ModalContext);
-    console.log(showModal);
+    
     return (
         <Fragment>
 

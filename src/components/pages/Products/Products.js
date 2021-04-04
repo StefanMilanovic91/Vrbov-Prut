@@ -1,24 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 
-import { baskets } from '../../../data/baskets';
-import { balloons } from '../../../data/glass-balloons';
-import { bottles } from '../../../data/glass-bottle';
+import { ProductContext } from '../../../ContextAPIs/ProductContext';
 
 import Product from './Product/Product';
 
 const Products = () => {
 
     const params = useParams();
-    const [products, setProducts] = useState(null);
+    const { products, getProducts, getPickedProduct } = useContext(ProductContext);
 
     useEffect(() => {
-        if (params.id === 'korpe') setProducts(baskets);
-        if (params.id === 'baloni') setProducts(balloons);
-        if (params.id === 'flaše') setProducts(bottles);
+        getProducts(params.id);
     }, [params.id]);
-
-
 
     return (
         <main className="Page Products">
@@ -28,7 +22,7 @@ const Products = () => {
             <div className="container">
                 <div className="row">
                     {
-                        products && products.map(product => <Product product={product} paramsId={params.id} />)
+                        products && products.ids.map(id => <Product getPickedProduct={getPickedProduct} key={id} product={products.entities.articles[id]} paramsId={params.id} />)
                     }
                 </div>
             </div>

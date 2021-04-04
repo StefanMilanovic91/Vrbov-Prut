@@ -43,7 +43,7 @@ export const baskets = [
         width: '25cm',
         height: '35cm',
         price: '1200rsd',
-        sliderThmbs : ['k11.png','k21.png','k31.png']
+        sliderThmbs : ['/images/k11.png','/images/k21.png','/images/k31.png']
     },
     { 
         src : '/images/k6.jpg',
@@ -52,7 +52,7 @@ export const baskets = [
         width: '40cm',
         height: '40cm',
         price: '1300rsd',
-        sliderThmbs : ['k11.png','k21.png','k31.png']
+        sliderThmbs : ['/images/k11.png','/images/k21.png','/images/k31.png']
     },
     { 
         src : '/images/k7.jpg',
@@ -61,7 +61,7 @@ export const baskets = [
         width: '20cm',
         height: '40cm',
         price: '1100rsd',
-        sliderThmbs : ['k11.png','k21.png','k31.png']
+        sliderThmbs : ['/images/k11.png','/images/k21.png','/images/k31.png']
     },
     { 
         src : '/images/k8.jpg',
@@ -70,7 +70,7 @@ export const baskets = [
         width: '35cm',
         height: '40cm',
         price: '1300rsd',
-        sliderThmbs : ['k11.png','k21.png','k31.png']
+        sliderThmbs : ['/images/k11.png','/images/k21.png','/images/k31.png']
     },
     { 
         src : '/images/k9.jpg',
@@ -79,6 +79,6 @@ export const baskets = [
         width: '35cm',
         height: '40cm',
         price: '1500rsd',
-        sliderThmbs : ['k11.png','k21.png','k31.png']
+        sliderThmbs : ['/images/k11.png','/images/k21.png','/images/k31.png']
     }
 ]

@@ -2,14 +2,14 @@ import React, { useContext } from 'react'
 import { ModalContext } from '../../../../ContextAPIs/ModalContext';
 
 
-const Product = ({product, paramsId}) => {
+const Product = ({product, paramsId, getPickedProduct}) => {
 
     const { showModal, showModalHendler } = useContext(ModalContext);
     
     return (
         <div className="col-12 col-md-6 col-lg-4">
             <div className="Product">
-                <div onClick={showModalHendler} className="Product__img">
+                <div onClick={() => { showModalHendler(); getPickedProduct(product.id);}} className="Product__img">
                     <img src={product.src} alt={product.title}/>
                     <div className="Product__img__preview">
                         <div className="Product__img__preview__icon"></div>
