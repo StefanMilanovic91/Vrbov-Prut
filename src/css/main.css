@@ -97,6 +97,11 @@ ul {
   text-align: center;
 }
 
+.btn-darkgrey {
+  background: darkgrey;
+  cursor: no-drop;
+}
+
 .btn-success {
   background: #379e17;
 }
@@ -106,11 +111,11 @@ ul {
   width: 100%;
 }
 
-.btn:hover {
+.btn-success:hover {
   background: #287211;
 }
 
-.btn:focus {
+.btn-success:focus {
   background: #287211;
   outline: none;
 }
@@ -315,6 +320,7 @@ button:active {
   padding: 5px 28px;
   border-radius: 4px;
   opacity: 0;
+  z-index: -1;
   -webkit-transition: all .3s;
   -o-transition: all .3s;
   transition: all .3s;
@@ -323,6 +329,7 @@ button:active {
 .Navbar__dropdown__list-show {
   top: 35px;
   opacity: 1;
+  z-index: 1;
 }
 
 .Navbar__dropdown__marker-1, .Navbar__dropdown__marker-2 {
@@ -1310,6 +1317,12 @@ button:active {
   color: #000;
 }
 
+@media screen and (min-width: 768px) {
+  .Contact__data .Navbar-item {
+    margin-bottom: 5rem;
+  }
+}
+
 .Contact__data .Navbar-item:nth-child(1):before {
   content: '';
   width: 25px;
@@ -1451,6 +1464,18 @@ button:active {
   border: 1px solid #73e550;
   -webkit-box-shadow: 0 0 3px #379e17;
           box-shadow: 0 0 3px #379e17;
+}
+
+.Contact__form__group__input-bad {
+  border: 1px solid red;
+  -webkit-box-shadow: 0 0 5px maroon;
+          box-shadow: 0 0 5px maroon;
+}
+
+.Contact__form__group__input-bad:focus {
+  border: 1px solid red;
+  -webkit-box-shadow: 0 0 5px maroon;
+          box-shadow: 0 0 5px maroon;
 }
 
 .Contact__form__label {

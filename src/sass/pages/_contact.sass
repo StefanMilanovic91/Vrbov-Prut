@@ -12,6 +12,8 @@
             position: relative
             font-weight: 700
             color: #000
+            @include size(md)
+                margin-bottom: 5rem
             &:nth-child(1)
                 &:before
                     @include contact-icon
@@ -75,13 +77,20 @@
                 &:focus
                     border: 1px solid $hover-link-color
                     box-shadow: 0 0 3px darken($hover-link-color, 25%) 
-
+            
+                    
             &__input-text
                 @extend .Contact__form__group__input
                 font-size: 1.8rem
                 &:focus
                     border: 1px solid $hover-link-color
                     box-shadow: 0 0 3px darken($hover-link-color, 25%)
+            &__input-bad
+                border: 1px solid red
+                box-shadow: 0 0 5px darken(red, 25%)
+                &:focus
+                    border: 1px solid red
+                    box-shadow: 0 0 5px darken(red, 25%)
         &__label
             font-size: 1.8rem
             margin-bottom: 1rem
