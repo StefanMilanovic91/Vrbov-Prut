@@ -97,7 +97,7 @@ ul {
   text-align: center;
 }
 
-.btn-darkgrey {
+.btn-disabled {
   background: darkgrey;
   cursor: no-drop;
 }

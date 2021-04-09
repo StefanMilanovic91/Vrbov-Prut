@@ -1,10 +1,25 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 import Carousel from '../../UI/Carousel/Carousel';
 
 const AboutUs = () => {
 
-    const images = [ {src: "images/slide-4.jpg"},{src: "images/slide-3.jpg"},{src: "images/slide-2.jpg"},{src: "images/slide-1.jpg"}]
+    const images = [ 
+        {
+            srcSmall: "images/slide-small-4.jpg", 
+            src: "images/slide-4.jpg"
+        },
+        {
+            srcSmall: "images/slide-small-3.jpg",
+            src: "images/slide-3.jpg"},
+        {
+            srcSmall: "images/slide-small-2.jpg",
+            src: "images/slide-2.jpg"
+        },
+        {
+            srcSmall: "images/slide-small-1.jpg",
+            src: "images/slide-1.jpg"
+        }]
 
 
     return (
@@ -28,9 +43,9 @@ const AboutUs = () => {
                         Imamo paletu najrazlicitijih proizvoda od pruća kao sto su stolice, koferi, korpe za kukuruz, trmke, kolevke,
                         ali nasa specijalnost su:
                         <ul class="AboutUs__links-holder">
-                            <li class="Navbar__list-item"><a class="Navbar__link" href="/"># Korpe</a></li>
-                            <li class="Navbar__list-item"><a class="Navbar__link" href="/"># Baloni</a></li>
-                            <li class="Navbar__list-item"><a class="Navbar__link" href="/"># Flase</a></li></ul>
+                            <li class="Navbar__list-item"><Link class="Navbar__link" to="/proizvodi/korpe"># Korpe</Link></li>
+                            <li class="Navbar__list-item"><Link class="Navbar__link" to="/proizvodi/baloni"># Baloni</Link></li>
+                            <li class="Navbar__list-item"><Link class="Navbar__link" to="/proizvodi/flaše"># Flase</Link></li></ul>
                     </div>
                 </div>
             </div>

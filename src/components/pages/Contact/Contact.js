@@ -8,32 +8,31 @@ const Contact = () => {
             value: '',
             name: 'firstName',
             isValid: false,
-            isRequired: true,
             isTouched: false
         },
         lastName: {
             value: '',
             name: 'lastName',
             isValid: false,
-            isRequired: true,
             isTouched: false
         },
         email: {
             value: '',
             name: 'email',
             isValid: false,
-            isRequired: true,
             isTouched: false
         },
         text: {
             value: '',
             name: 'text',
             isValid: false,
-            isRequired: true,
             isTouched: false
-        },
-        isValid: false
+        }
     });
+    const [formIsValid, setFormIsValid] = useState(false);
+
+    let defaultInputClasses = ["Contact__form__group__input"].join(' ');
+    let badInputClasses = ["Contact__form__group__input", " Contact__form__group__input-bad"].join(' ');
 
     const checkFirstLastName = (value) => {
         let patt = /[A-Za-z]{3,25}$/;
@@ -95,9 +94,9 @@ const Contact = () => {
             temporaryForm['email'].isValid &&
             temporaryForm['text'].isValid
         ){
-            temporaryForm.isValid = true;
+            setFormIsValid(true);
         } else {
-            temporaryForm.isValid = false;
+            setFormIsValid(false);
         }
 
         // set new state
@@ -107,8 +106,26 @@ const Contact = () => {
     const submit = (e) => {
         
         e.preventDefault();
-        console.log(form);
+
+        // append data in new FormData structure
+        let data = new FormData();
+        for ( let key in form ) {
+            data.append(key, form[key].value);
+        }
+        
+        fetch('https://formspree.io/f/xbjqjpna', {
+            method: 'POST',
+            body: data,
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            console.log(response);
+        }).catch(error => {
+            console.log("Oops! There was a problem submitting your form");
+          });
     }
+
 
     return (
         <div className="Page Contact">
@@ -126,7 +143,7 @@ const Contact = () => {
                             <ul className="Navbar__list">
                                 <li className="Navbar-item">063 / 814 - 68 - 29</li>
                                 <li className="Navbar-item">035 / 275 - 201</li>
-                                <li className="Navbar-item">vrbovprut@gmail.com</li>
+                                <li className="Navbar-item">vrbovprut035@gmail.com</li>
                                 <a href='http://www.facebook.com' target="blank" className="Navbar-item">Facebook</a>
                             </ul>
                         </div>
@@ -139,21 +156,21 @@ const Contact = () => {
                                 <h3 className="second-title text-center">Kontakt Forma</h3>
                                 <div className="Contact__form__group">
                                     <label className="Contact__form__label">Ime</label>
-                                    <input required onChange={onChangeInput} name="firstName" value={form['firstName'].value} type="text" className={form.firstName.isTouched ? form.firstName.isValid ? "Contact__form__group__input" : "Contact__form__group__input Contact__form__group__input-bad" : "Contact__form__group__input"} placeholder="Ime"/>
+                                    <input onChange={onChangeInput} name="firstName" value={form['firstName'].value} type="text" className={form.firstName.isTouched ? form.firstName.isValid ? defaultInputClasses : badInputClasses : defaultInputClasses} placeholder="Ime" required />
                                 </div>
                                 <div className="Contact__form__group">
                                     <label className="Contact__form__label">Prezime</label>
-                                    <input required onChange={onChangeInput} name="lastName" value={form['lastName'].value} type="text" className={form.lastName.isTouched ? form.lastName.isValid ? "Contact__form__group__input" : "Contact__form__group__input Contact__form__group__input-bad" : "Contact__form__group__input"} placeholder="Prezime"/>
+                                    <input onChange={onChangeInput} name="lastName" value={form['lastName'].value} type="text" className={form.lastName.isTouched ? form.lastName.isValid ? defaultInputClasses : badInputClasses : defaultInputClasses} placeholder="Prezime" required />
                                 </div>
                                 <div className="Contact__form__group">
                                     <label className="Contact__form__label">Email adresa</label>
-                                    <input required onChange={onChangeInput} name="email" value={form['email'].value} type="email" className={form.email.isTouched ? form.email.isValid ? "Contact__form__group__input" : "Contact__form__group__input Contact__form__group__input-bad" : "Contact__form__group__input"} placeholder="Email adresa"/>
+                                    <input onChange={onChangeInput} name="email" value={form['email'].value} type="email" className={form.email.isTouched ? form.email.isValid ? defaultInputClasses : badInputClasses : defaultInputClasses} placeholder="Email adresa" required />
                                 </div>
                                 <div className="Contact__form__group">
                                     <label className="Contact__form__label">Text poruke</label>
-                                    <textarea required onChange={onChangeInput} name="text" value={form['text'].value} type="text" className={form.text.isTouched ? form.text.isValid ? "Contact__form__group__input-text" : "Contact__form__group__input-text Contact__form__group__input-bad" : "Contact__form__group__input-text"} cols="30" rows="10" placeholder="Vaša poruka"></textarea>
+                                    <textarea required onChange={onChangeInput} name="text" value={form['text'].value} type="text" className={form.text.isTouched ? form.text.isValid ? defaultInputClasses : badInputClasses : defaultInputClasses} cols="30" rows="10" placeholder="Vaša poruka" required ></textarea>
                                 </div>
-                                <button disabled={!form.isValid} onClick={submit} className={form.isValid ? "btn btn-block btn-success" : "btn btn-block btn-darkgrey" }>Pošalji poruku</button>
+                                <button disabled={!formIsValid} onClick={submit} className={formIsValid ? "btn btn-block btn-success" : "btn btn-block btn-disabled" }>Pošalji poruku</button>
                             </form>
                         </div>
                     </div>

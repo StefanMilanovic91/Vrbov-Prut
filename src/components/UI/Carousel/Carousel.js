@@ -27,12 +27,13 @@ const Carousel = ({ carouselItems }) => {
             return () => clearTimeout(id1);
         }
         
-            let id2 = setTimeout(() => {
-                if (currentIndex === 1) refArray.current.classList.add('Carousel__inner__animation');
-                setCurrentIndex(currentIndex + 1);
-            }, time);
-            
-            return () => clearTimeout(id2);
+        let id2 = setTimeout(() => {
+            if (currentIndex === 1) refArray.current.classList.add('Carousel__inner__animation');
+            setCurrentIndex(currentIndex + 1);
+        }, time);
+        
+        return () => clearTimeout(id2);
+        
 
     }, [currentIndex]);
     
@@ -46,24 +47,44 @@ const Carousel = ({ carouselItems }) => {
                         if (carouselItems.length - 1 === index) {
                             return <Fragment>
                                         <div key={Math.floor(Math.random() * 10000)} className="Carousel__item">
-                                            <img className="Carousel__item__img" src={item.src} alt="test"/>
+                                            <picture>
+                                                <source media="(max-width: 768px)" srcset={item.srcSmall} />
+                                                <source media="(min-width: 769px)" srcset={item.src} />
+                                                <img className="Carousel__item__img" src={item.src} alt="Korpe od pruca"/>
+                                            </picture>
                                         </div>
                                         <div key={Math.floor(Math.random() * 10000)} className="Carousel__item">
-                                            <img className="Carousel__item__img" src={carouselItems[0].src} alt="test"/>
+                                            <picture>
+                                                <source media="(max-width: 768px)" srcset={carouselItems[0].srcSmall} />
+                                                <source media="(min-width: 769px)" srcset={carouselItems[0].src} />
+                                                <img className="Carousel__item__img" src={carouselItems[0].src} alt="Korpe od pruca"/>
+                                            </picture>
                                         </div>
                                     </Fragment>
                         } else if (index === 0) {
                             return <Fragment>
                                         <div  key={Math.floor(Math.random() * 10000)} className="Carousel__item">
-                                            <img className="Carousel__item__img" src={carouselItems[carouselItems.length - 1].src} alt="test"/>
+                                            <picture>
+                                                <source media="(max-width: 768px)" srcset={carouselItems[carouselItems.length - 1].srcSmall} />
+                                                <source media="(min-width: 769px)" srcset={carouselItems[carouselItems.length - 1].src} />
+                                                <img className="Carousel__item__img" src={carouselItems[carouselItems.length - 1].src} alt="Korpe od pruca"/>
+                                            </picture>
                                         </div>
                                         <div  key={Math.floor(Math.random() * 10000)} className="Carousel__item">
-                                            <img className="Carousel__item__img" src={item.src} alt="test"/>
+                                            <picture>
+                                                <source media="(max-width: 768px)" srcset={item.srcSmall} />
+                                                <source media="(min-width: 769px)" srcset={item.src} />
+                                                <img className="Carousel__item__img" src={item.src} alt="Korpe od pruca"/>
+                                            </picture>
                                         </div>
                                     </Fragment>
                         } else {
                             return  <div  key={Math.floor(Math.random() * 10000)} className="Carousel__item">
-                                        <img className="Carousel__item__img" src={item.src} alt="test"/>
+                                        <picture>
+                                            <source media="(max-width: 768px)" srcset={item.srcSmall} />
+                                            <source media="(min-width: 769px)" srcset={item.src} />
+                                            <img className="Carousel__item__img" src={item.src} alt="Korpe od pruca"/>
+                                        </picture>
                                     </div>
                         }
                         

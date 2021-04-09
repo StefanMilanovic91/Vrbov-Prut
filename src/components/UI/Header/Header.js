@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useHistory } from "react-router-dom";
 import { Link, NavLink } from 'react-router-dom';
 
 const Header = () => {
@@ -6,6 +7,9 @@ const Header = () => {
     const [toggleMenu, setToggleMenu] = useState(false);
     const [toggleDDMenu, setToggleDDMenu] = useState(false);
 
+    const { location: { pathname } } = useHistory();
+
+    
     useEffect(() => {
         if (!toggleMenu) setToggleDDMenu(false);
     }, [toggleMenu]);

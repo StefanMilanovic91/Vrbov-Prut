@@ -24,10 +24,10 @@ const App = () => {
             <Header />
             <Switch>
                 <Route exact path="/" render={() => <Redirect to="/početna" />} />
-                <Route path="/početna" component={Home} />
-                <Route path="/o-nama" component={AboutUs} />
-                <Route path="/kontakt" component={Contact} />
-                <Route path="/proizvodi/:id" component={Products} />
+                <Route exact path="/početna" component={Home} />
+                <Route exact path="/o-nama" component={AboutUs} />
+                <Route exact path="/kontakt" component={Contact} />
+                <Route exact path="/proizvodi/:id" component={Products} />
             </Switch>
             <Footer />
 
