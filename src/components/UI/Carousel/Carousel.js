@@ -1,4 +1,5 @@
 import React, { Fragment, useEffect, useRef, useState } from 'react'
+import { v4 as uuid_v4 } from "uuid";
 
 const Carousel = ({ carouselItems }) => {
 
@@ -35,7 +36,7 @@ const Carousel = ({ carouselItems }) => {
         return () => clearTimeout(id2);
         
 
-    }, [currentIndex]);
+    }, [currentIndex, carouselItems.length]);
     
     
     return (
@@ -45,44 +46,44 @@ const Carousel = ({ carouselItems }) => {
             {
                     carouselItems.map((item, index) => {
                         if (carouselItems.length - 1 === index) {
-                            return <Fragment>
-                                        <div key={Math.floor(Math.random() * 10000)} className="Carousel__item">
+                            return <Fragment key={uuid_v4()} >
+                                        <div className="Carousel__item">
                                             <picture>
-                                                <source media="(max-width: 768px)" srcset={item.srcSmall} />
-                                                <source media="(min-width: 769px)" srcset={item.src} />
+                                                <source media="(max-width: 768px)" srcSet={item.srcSmall} />
+                                                <source media="(min-width: 769px)" srcSet={item.src} />
                                                 <img className="Carousel__item__img" src={item.src} alt="Korpe od pruca"/>
                                             </picture>
                                         </div>
-                                        <div key={Math.floor(Math.random() * 10000)} className="Carousel__item">
+                                        <div className="Carousel__item">
                                             <picture>
-                                                <source media="(max-width: 768px)" srcset={carouselItems[0].srcSmall} />
-                                                <source media="(min-width: 769px)" srcset={carouselItems[0].src} />
+                                                <source media="(max-width: 768px)" srcSet={carouselItems[0].srcSmall} />
+                                                <source media="(min-width: 769px)" srcSet={carouselItems[0].src} />
                                                 <img className="Carousel__item__img" src={carouselItems[0].src} alt="Korpe od pruca"/>
                                             </picture>
                                         </div>
                                     </Fragment>
                         } else if (index === 0) {
-                            return <Fragment>
-                                        <div  key={Math.floor(Math.random() * 10000)} className="Carousel__item">
+                            return <Fragment key={uuid_v4()} >
+                                        <div className="Carousel__item">
                                             <picture>
-                                                <source media="(max-width: 768px)" srcset={carouselItems[carouselItems.length - 1].srcSmall} />
-                                                <source media="(min-width: 769px)" srcset={carouselItems[carouselItems.length - 1].src} />
+                                                <source media="(max-width: 768px)" srcSet={carouselItems[carouselItems.length - 1].srcSmall} />
+                                                <source media="(min-width: 769px)" srcSet={carouselItems[carouselItems.length - 1].src} />
                                                 <img className="Carousel__item__img" src={carouselItems[carouselItems.length - 1].src} alt="Korpe od pruca"/>
                                             </picture>
                                         </div>
-                                        <div  key={Math.floor(Math.random() * 10000)} className="Carousel__item">
+                                        <div className="Carousel__item">
                                             <picture>
-                                                <source media="(max-width: 768px)" srcset={item.srcSmall} />
-                                                <source media="(min-width: 769px)" srcset={item.src} />
+                                                <source media="(max-width: 768px)" srcSet={item.srcSmall} />
+                                                <source media="(min-width: 769px)" srcSet={item.src} />
                                                 <img className="Carousel__item__img" src={item.src} alt="Korpe od pruca"/>
                                             </picture>
                                         </div>
                                     </Fragment>
                         } else {
-                            return  <div  key={Math.floor(Math.random() * 10000)} className="Carousel__item">
+                            return  <div key={uuid_v4()} className="Carousel__item">
                                         <picture>
-                                            <source media="(max-width: 768px)" srcset={item.srcSmall} />
-                                            <source media="(min-width: 769px)" srcset={item.src} />
+                                            <source media="(max-width: 768px)" srcSet={item.srcSmall} />
+                                            <source media="(min-width: 769px)" srcSet={item.src} />
                                             <img className="Carousel__item__img" src={item.src} alt="Korpe od pruca"/>
                                         </picture>
                                     </div>

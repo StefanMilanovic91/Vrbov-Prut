@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 
 import { ProductContext } from '../../../ContextAPIs/ProductContext';
@@ -12,6 +12,7 @@ const Products = () => {
 
     useEffect(() => {
         getProducts(params.id);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [params.id]);
 
     return (

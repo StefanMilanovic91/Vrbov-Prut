@@ -30,7 +30,7 @@ const AboutUs = () => {
             <div className="container">
                 <div className="AboutUs__title">
                     <h1 className="Main-title">O Nama</h1>
-                    <span class="underline"></span>
+                    <span className="underline"></span>
                 </div>
                 <div className="AboutUs__paragraphs">
                     <div className="AboutUs__paragraph">
@@ -42,10 +42,10 @@ const AboutUs = () => {
                     <div className="AboutUs__paragraph">
                         Imamo paletu najrazlicitijih proizvoda od pruća kao sto su stolice, koferi, korpe za kukuruz, trmke, kolevke,
                         ali nasa specijalnost su:
-                        <ul class="AboutUs__links-holder">
-                            <li class="Navbar__list-item"><Link class="Navbar__link" to="/proizvodi/korpe"># Korpe</Link></li>
-                            <li class="Navbar__list-item"><Link class="Navbar__link" to="/proizvodi/baloni"># Baloni</Link></li>
-                            <li class="Navbar__list-item"><Link class="Navbar__link" to="/proizvodi/flaše"># Flase</Link></li></ul>
+                        <ul className="AboutUs__links-holder">
+                            <li className="Navbar__list-item"><Link className="Navbar__link" to="/proizvodi/korpe"># Korpe</Link></li>
+                            <li className="Navbar__list-item"><Link className="Navbar__link" to="/proizvodi/baloni"># Baloni</Link></li>
+                            <li className="Navbar__list-item"><Link className="Navbar__link" to="/proizvodi/flaše"># Flase</Link></li></ul>
                     </div>
                 </div>
             </div>

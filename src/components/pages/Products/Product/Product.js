@@ -4,7 +4,7 @@ import { ModalContext } from '../../../../ContextAPIs/ModalContext';
 
 const Product = ({product, paramsId, getPickedProduct}) => {
 
-    const { showModal, showModalHendler } = useContext(ModalContext);
+    const { showModalHendler } = useContext(ModalContext);
     
     return (
         <div className="col-12 col-md-6 col-lg-4">

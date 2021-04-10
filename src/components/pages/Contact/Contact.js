@@ -1,4 +1,7 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
+
+import { checkFirstLastName, checkEmail, checkText } from '../../validation/validation';
+
 import Map from '../../UI/Map/Map';
 
 const Contact = () => {
@@ -30,38 +33,11 @@ const Contact = () => {
         }
     });
     const [formIsValid, setFormIsValid] = useState(false);
+    const [showLoader, setShowLoader] = useState(false);
 
-    let defaultInputClasses = ["Contact__form__group__input"].join(' ');
-    let badInputClasses = ["Contact__form__group__input", " Contact__form__group__input-bad"].join(' ');
-
-    const checkFirstLastName = (value) => {
-        let patt = /[A-Za-z]{3,25}$/;
-
-        if (!patt.test(value.replace(/\s/g, ''))) {
-            return false;
-        } else {
-            return true;
-        }
-    }
-
-    const checkEmail = (value) => {
-        let patt = /^([a-zA-Z0-9_\-.]+)@([a-zA-Z0-9.]+)\.([a-zA-Z]{2,6})$/;
-    
-        if(!patt.test(value.trim())){
-            return false;
-        } else {
-            return true;
-        }
-    }
-    const checkText = (value) => {
-        let patt = /^.{5,150}$/;
-
-        if (!patt.test(value.replace(/\s/g, ''))) {
-            return false;
-        } else {
-            return true;
-        }
-    }
+    const defaultInputClasses = ["Contact__form__group__input"].join(' ');
+    const badInputClasses = ["Contact__form__group__input", "Contact__form__group__input-bad"].join(' ');
+    const loader = <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
 
     const onChangeInput = (e) => {
         
@@ -106,7 +82,8 @@ const Contact = () => {
     const submit = (e) => {
         
         e.preventDefault();
-
+        // start loading
+        setShowLoader(true)
         // append data in new FormData structure
         let data = new FormData();
         for ( let key in form ) {
@@ -120,8 +97,12 @@ const Contact = () => {
                 'Accept': 'application/json'
             }
         }).then(response => {
+            setShowLoader(false)
+            //nastavi odavde, dodaj obavestenje o uspesnom ili neuspesnom slanju poruke...
             console.log(response);
         }).catch(error => {
+            setShowLoader(false)
+            //nastavi odavde, dodaj obavestenje o uspesnom ili neuspesnom slanju poruke...
             console.log("Oops! There was a problem submitting your form");
           });
     }
@@ -168,9 +149,9 @@ const Contact = () => {
                                 </div>
                                 <div className="Contact__form__group">
                                     <label className="Contact__form__label">Text poruke</label>
-                                    <textarea required onChange={onChangeInput} name="text" value={form['text'].value} type="text" className={form.text.isTouched ? form.text.isValid ? defaultInputClasses : badInputClasses : defaultInputClasses} cols="30" rows="10" placeholder="Vaša poruka" required ></textarea>
+                                    <textarea onChange={onChangeInput} name="text" value={form['text'].value} type="text" className={form.text.isTouched ? form.text.isValid ? defaultInputClasses : badInputClasses : defaultInputClasses} cols="30" rows="10" placeholder="Vaša poruka" required ></textarea>
                                 </div>
-                                <button disabled={!formIsValid} onClick={submit} className={formIsValid ? "btn btn-block btn-success" : "btn btn-block btn-disabled" }>Pošalji poruku</button>
+                                <button disabled={!formIsValid} onClick={submit} className={formIsValid ? "btn btn-block btn-success" : "btn btn-block btn-disabled"}>{ showLoader ? loader : 'Pošalji poruku'}</button>
                             </form>
                         </div>
                     </div>
