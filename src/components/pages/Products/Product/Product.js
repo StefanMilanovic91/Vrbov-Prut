@@ -10,7 +10,7 @@ const Product = ({product, paramsId, getPickedProduct}) => {
         <div className="col-12 col-md-6 col-lg-4">
             <div className="Product">
                 <div onClick={() => { showModalHendler(); getPickedProduct(product.id);}} className="Product__img">
-                    <img src={product.src} alt={product.title}/>
+                    <img src={'/' + product.src} alt={product.title}/>
                     <div className="Product__img__preview">
                         <div className="Product__img__preview__icon"></div>
                     </div>

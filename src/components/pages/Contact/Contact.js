@@ -34,10 +34,11 @@ const Contact = () => {
     });
     const [formIsValid, setFormIsValid] = useState(false);
     const [showLoader, setShowLoader] = useState(false);
+    const [showSuccessMsg, setShowSuccessMsg] = useState(null);
 
     const defaultInputClasses = ["Contact__form__group__input"].join(' ');
     const badInputClasses = ["Contact__form__group__input", "Contact__form__group__input-bad"].join(' ');
-    const loader = <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    const loader = <div class="lds-dual-ring"></div>
 
     const onChangeInput = (e) => {
         
@@ -98,11 +99,13 @@ const Contact = () => {
             }
         }).then(response => {
             setShowLoader(false)
-            //nastavi odavde, dodaj obavestenje o uspesnom ili neuspesnom slanju poruke...
+            setShowSuccessMsg('Poruka je poslata');
+            setTimeout(() => setShowSuccessMsg(null), 5000);
             console.log(response);
         }).catch(error => {
             setShowLoader(false)
-            //nastavi odavde, dodaj obavestenje o uspesnom ili neuspesnom slanju poruke...
+            setShowSuccessMsg('Oops, pokusajte kasnije, hvala');
+            setTimeout(() => setShowSuccessMsg(null), 5000);
             console.log("Oops! There was a problem submitting your form");
           });
     }
@@ -151,7 +154,7 @@ const Contact = () => {
                                     <label className="Contact__form__label">Text poruke</label>
                                     <textarea onChange={onChangeInput} name="text" value={form['text'].value} type="text" className={form.text.isTouched ? form.text.isValid ? defaultInputClasses : badInputClasses : defaultInputClasses} cols="30" rows="10" placeholder="Vaša poruka" required ></textarea>
                                 </div>
-                                <button disabled={!formIsValid} onClick={submit} className={formIsValid ? "btn btn-block btn-success" : "btn btn-block btn-disabled"}>{ showLoader ? loader : 'Pošalji poruku'}</button>
+                                <button disabled={!formIsValid} onClick={submit} className={formIsValid ? "btn btn-block btn-success" : "btn btn-block btn-disabled"}>{ showLoader ? loader : showSuccessMsg ? showSuccessMsg : 'Pošalji poruku'}</button>
                             </form>
                         </div>
                     </div>
