@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Link, NavLink, useHistory } from 'react-router-dom';
+import { Link, NavLink, withRouter } from 'react-router-dom';
 
-const Header = () => {
+const Header = (props) => {
     
-    const { location: { pathname } } = useHistory();
+    const pathname = props.location.pathname;
 
     const [toggleMenu, setToggleMenu] = useState(false);
     const [toggleDDMenu, setToggleDDMenu] = useState(false);
@@ -14,12 +14,12 @@ const Header = () => {
     }, [toggleMenu]);
 
     useEffect(() => {
+        
         pathname === '/proizvodi/flaše' ||
         pathname === '/proizvodi/baloni' ||
         pathname === '/proizvodi/korpe' ? setMarkerDown(true) : setMarkerDown(false)
     }, [pathname]);
 
-    	
 
     return (
         <header className={ !toggleMenu ? 'Header' : 'Header Header__navbar-show'}>
@@ -62,4 +62,4 @@ const Header = () => {
     )
 }
 
-export default Header
+export default withRouter(Header)
