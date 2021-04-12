@@ -12,7 +12,7 @@ const Footer = () => {
                             <ul className="Footer__links-holder">
                                 <li className="Navbar__list-item"><Link className="Navbar__link" to="/proizvodi/korpe"># Korpe</Link></li>
                                 <li className="Navbar__list-item"><Link className="Navbar__link" to="/proizvodi/baloni"># Baloni</Link></li>
-                                <li className="Navbar__list-item"><Link className="Navbar__link" to="/proizvodi/flaše"># Flase</Link></li>
+                                <li className="Navbar__list-item"><Link className="Navbar__link" to="/proizvodi/flaše"># Flaše</Link></li>
                             </ul>
                         </div>
                     </div>

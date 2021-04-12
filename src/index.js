@@ -6,8 +6,8 @@ import { ModalProvider } from './ContextAPIs/ModalContext';
 import { ProductProvider } from './ContextAPIs/ProductContext';
 
 import App from './App';
-import './css/main.css'
-import './css/bootstrap-grid.css'
+import './css/bootstrap-grid.min.css';
+import './css/main.pref.min.css';
 
 ReactDOM.render(
     <BrowserRouter>

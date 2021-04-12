@@ -1,15 +1,25 @@
 import React, { useEffect, useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useHistory } from 'react-router-dom';
 
 const Header = () => {
+    
+    const { location: { pathname } } = useHistory();
 
     const [toggleMenu, setToggleMenu] = useState(false);
     const [toggleDDMenu, setToggleDDMenu] = useState(false);
+    const [markerDown, setMarkerDown] = useState(false);
 
-    
     useEffect(() => {
         if (!toggleMenu) setToggleDDMenu(false);
     }, [toggleMenu]);
+
+    useEffect(() => {
+        pathname === '/proizvodi/flaše' ||
+        pathname === '/proizvodi/baloni' ||
+        pathname === '/proizvodi/korpe' ? setMarkerDown(true) : setMarkerDown(false)
+    }, [pathname]);
+
+    	
 
     return (
         <header className={ !toggleMenu ? 'Header' : 'Header Header__navbar-show'}>
@@ -28,8 +38,8 @@ const Header = () => {
                             <NavLink activeClassName="Navbar__link__active" onClick={() => setToggleMenu(false)} to="/o-nama" className="Navbar__link">O Nama</NavLink>
                         </li>
                         <li className="Navbar__list-item Navbar__dropdown">
-                            <div onClick={() => setToggleDDMenu(!toggleDDMenu)} className={toggleDDMenu ? "Navbar__link Navbar__link__active" : "Navbar__link"}>Proizvodi</div>
-                            <span className={!toggleDDMenu ? 'Navbar__dropdown__marker-1' : 'Navbar__dropdown__marker-2'}></span>
+                            <div onClick={() => setToggleDDMenu(!toggleDDMenu)} className={toggleDDMenu ? "Navbar__link Navbar__link__active" : markerDown ? "Navbar__link Navbar__link__active" : "Navbar__link"}>Proizvodi</div>
+                            <span className={!toggleDDMenu ? markerDown ? 'Navbar__dropdown__marker-2' : 'Navbar__dropdown__marker-1'  : 'Navbar__dropdown__marker-2'}></span>
                             <ul className={!toggleDDMenu ? 'Navbar__dropdown__list' : 'Navbar__dropdown__list Navbar__dropdown__list-show' }>
                                 <li className="Navbar__list-item">
                                     <NavLink activeClassName="Navbar__link__active" onClick={() => {setToggleMenu(false); setToggleDDMenu(false)}} to="/proizvodi/korpe" className="Navbar__link">Korpe</NavLink>

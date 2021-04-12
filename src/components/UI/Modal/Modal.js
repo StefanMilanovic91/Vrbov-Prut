@@ -28,7 +28,7 @@ const Modal = () => {
             <div className="container-fluid px-0">
                 <div className="Modal__holder">
                     <div className="Modal__holder__img">
-                        <img className="Modal__holder__img__item" src={pickedProduct.sliderThmbs[counter]} alt={pickedProduct.title} />
+                        <img className="Modal__holder__img__item" src={'/' + pickedProduct.sliderThmbs[counter]} alt={pickedProduct.title} />
                     </div>
                     <div onClick={prevPicture} className="Modal__holder__prev-btn"></div>
                     <div onClick={nextPicture} className="Modal__holder__next-btn"></div>

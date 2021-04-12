@@ -9,7 +9,7 @@ const Products = () => {
 
     const params = useParams();
     const { products, getProducts, getPickedProduct } = useContext(ProductContext);
-
+    
     useEffect(() => {
         getProducts(params.id);
         // eslint-disable-next-line react-hooks/exhaustive-deps

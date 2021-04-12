@@ -118,11 +118,11 @@ const Contact = () => {
                 <div className="underline"></div>
             </div>
             <div className="container">
-                <div className="row flex-column-reverse flex-md-row">
+                <div className="row pb-5">
                     <div className="col-12 col-md-6 pb-5">
                         <Map />
                     </div>
-                    <div className="col-12 col-md-6 pb-5">
+                    <div className="Contact__box-2 col-12 col-md-6 pb-5">
                         <div className="Contact__data">
                             <ul className="Navbar__list">
                                 <li className="Navbar-item">063 / 814 - 68 - 29</li>

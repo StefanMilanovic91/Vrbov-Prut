@@ -9,10 +9,12 @@
     &__contacts-holder
         @extend .Footer__links-holder
         .Navbar-item
+            position: relative
             color: #fff
             margin-bottom: 2rem
-            margin-left: 6rem
-            position: relative
+            margin-left: 3rem
+            @include size(sm)
+                margin-left: 6rem
             &:nth-child(1)
                 &:before
                     @include contact-icon
