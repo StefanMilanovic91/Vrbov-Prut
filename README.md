@@ -1,5 +1,6 @@
 # Vrbov Prut
-Description: Presentation of crafts and handicraft products. 
+Description: Presentation of crafts and handicraft products.
+
 Tech: ["React", "Sass"]
 
 Live Preview: https://vrbov-prut.vercel.app/po%C4%8Detna
